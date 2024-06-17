@@ -1,4 +1,7 @@
+BOOST_LIBS = -lboost_serialization -lboost_iostreams -lboost_system
+
 all:
-    g++ filename.cpp -o output_name.out
+	@g++ main.cpp -o main.out $(BOOST_LIBS)
+
 clean:
-	rm -rf *.out output_name
+	@rm -rf *.out main.out
