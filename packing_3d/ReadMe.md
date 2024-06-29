@@ -3,10 +3,11 @@ Windows OS with:
 
 1. python 3.11.0
 2. pip above 9.1
-3. numpy and pandas
-4. Google ortools
-5. Microsoft Visual Studio Enterprise 2022
-6. Microsoft Visual Studio Community 2022 Preview 2 or above
+3. Microsoft Visual Studio Enterprise 2022
+4. Microsoft Visual Studio Community 2022 Preview 2 or above
+5. numpy and pandas
+6. Google ortools
+ 
 
 # Steps to include the library
 
