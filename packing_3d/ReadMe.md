@@ -9,7 +9,7 @@
 
 * Clone the repo into the folder where you are working
 ```
-git clone something.com
+git clone https://github.com/codechiefVignesh/bin_packing_iitm.git
 ```
 * How to import the package and use it?
 ```
