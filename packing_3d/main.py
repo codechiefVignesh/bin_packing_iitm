@@ -3,33 +3,22 @@ from io import StringIO
 import pandas as pd
 import numpy as np
 
-#---------------------------------------------------
-# data
-#---------------------------------------------------
+def packing_3d(truck_dim,items): 
+    #---------------------------------------------------
+    # Input data format
+    # For Truck dimensions: dictionary with two keys namely "dimensions" and "maximum_capacity"
+    # Eg. truck_dim = {"dimensions":(l,b,h),"maximum_capacity":M}
+    # For Items to load: dictionary with keys "itemid","length","width","height","weight","value"
+    # Eg. items = {"itemid":[i1,i2,i3,...],"length":[l1,l2,l3,...],"width":[b1,b2,b3,...],
+    #              "height":[h1,h2,h3,...],"weight":[w1,w2,w3,...],"value":[v1,v2,v3...]}
+    #---------------------------------------------------
 
-def packing_3d(truck_dim,items):
-    data = '''
-    itemid    length   width   height  weight  value  
-    1           11       2       1       48      1    
-    2            5       4       2       9       1    
-    3           12       5       2        6      1    
-    4           10       7       1        2      1    
-    5            2       4       2       33      1    
-    6           10       1       5       13      1    
-    7           12       7       2       29      1    
-    8           10       5       1       49      1    
-    '''
-
-    df = pd.read_table(StringIO(data), sep='\s+')
-    print("Input data")
-    print(df)
-
-    L = 12
-    W = 8
-    H = 5
-    M = 400
-
-    print(f"Truck's Dimension Length:{L} Width:{W} Height:{H} Maximum Capacity:{M}")
+    df = pd.DataFrame.from_dict(items)
+    
+    L = truck_dim["dimensions"][0]
+    W = truck_dim["dimensions"][1]
+    H = truck_dim["dimensions"][2]
+    M = truck_dim["maximum_capacity"]
 
     #---------------------------------------------------
     # derived data
@@ -44,7 +33,6 @@ def packing_3d(truck_dim,items):
     indx0 = np.arange(np.size(l0))
 
     n = len(l0)
-    print(f"Number of individual items: {n}")
 
     #---------------------------------------------------
     # create rotated items
@@ -56,14 +44,13 @@ def packing_3d(truck_dim,items):
     w_rot = np.concatenate((b0, h0, l0, h0, b0, l0))
     h_rot = np.concatenate((h0, b0, h0, l0, l0, b0))
 
-
+    # 
     wr = np.tile(w0, 6)
     vr = np.tile(v0, 6)
     indxr = np.tile(indx0, 6)
     itemid = np.tile(df['itemid'].to_numpy(), 6)
 
     nr = 6 * n
-    print(f"Number of individual items (after adding rotations): {nr}")
 
     #---------------------------------------------------
     # or-tools model
@@ -71,13 +58,10 @@ def packing_3d(truck_dim,items):
 
     model = cp_model.CpModel()
 
-    #
     # variables
-    #
 
     # u[i] : item i is used
     u = [model.NewBoolVar(f"u{i}") for i in range(nr)]
-
 
     # x[i], y[i], z[i] : location of item i
     x = [model.NewIntVar(0, L, f"x{i}") for i in range(nr)]
@@ -118,6 +102,8 @@ def packing_3d(truck_dim,items):
         model.Add(sum(u[i + j * n] for j in range(6)) <= 1)
 
     # no overlap in 3D.
+    # Here we are writing conditions for two 3d cuboid to not overlap each other in the 3d space.
+    # Condition: All the cordinates of the one of the cuboic shouldn't lie inside the other cuboid. 
     for i in range(nr):
         for j in range(i+1,nr):
             c1 = model.NewBoolVar("c1")
@@ -137,7 +123,7 @@ def packing_3d(truck_dim,items):
             model.AddBoolOr([c1,c2,c3,c4,c5,c6])
 
 
-    # extra: this constraint helps performance enormously
+    # extra: this constraint helps performance enormously(space constraints)
     model.Add(sum([l_rot[i] * w_rot[i] * h_rot[i] * u[i] for i in range(nr)]) <= L * W * H)
 
     # weight constraint
@@ -146,29 +132,22 @@ def packing_3d(truck_dim,items):
     # objective
     model.Maximize(sum([u[i] * l_rot[i] * w_rot[i] * h_rot[i] for i in range(nr)]))
 
-    # print("check5")
-
-    #
     # solve model
-    #
-    solver = cp_model.CpSolver()
-    # log does not work inside a Jupyter notebook
-    # print("check5a")
-    solver.parameters.log_search_progress = True
-    solver.parameters.num_search_workers = 8
-    # print("check5b")
-    rc = solver.Solve(model)   
-    # print("check5c")
-    print(f"return code:{rc}")
-    print(f"status:{solver.StatusName()}")
-    print()
-    print(solver.ResponseStats())
-    print()
 
-    # print("check6")
-    #
-    # report solution
-    #
+    solver = cp_model.CpSolver()
+    
+    solver.parameters.num_search_workers = 8
+    
+    rc = solver.Solve(model)   
+    
+    # report solution---------------------------------------------------------------------
+    # Output solution is a dataframe with the following columns:
+    # 1.The coordinate of the start corner(x,y,z)
+    # 2.Dimensions of the items(length,width,height)
+    # 3.The coordinate of the end corner(x2,y2,z2)
+    # 4.The value,weight and itemid of the item.
+    #-------------------------------------------------------------------------------------
+    
     if rc == cp_model.OPTIMAL or rc == cp_model.FEASIBLE:
         used = {i for i in range(nr) if solver.Value(u[i]) == 1}
         df = pd.DataFrame({
@@ -185,7 +164,6 @@ def packing_3d(truck_dim,items):
             'weight': [wr[i] for i in used],
             'itemid': [itemid[i] for i in used]
         })
-        print(df)
         return df
     else:
         return "Error finding the solution"
