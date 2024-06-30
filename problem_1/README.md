@@ -1,6 +1,6 @@
 
 ## Instructions and Descriptions for setting up and running the package.
-
+> Note : The following code has been tested in Ubuntu 20.04 LTS.
 ### DESCRIPTION
 #### include 
 > contains the main cpp file that will be included as a header in main.cpp
