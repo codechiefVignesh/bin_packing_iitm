@@ -7,6 +7,7 @@ Windows OS with:
 4. Microsoft Visual Studio Community 2022 Preview 2 or above
 5. numpy and pandas
 6. Google ortools
+7. matplotlib
  
 
 # Steps to include the library
