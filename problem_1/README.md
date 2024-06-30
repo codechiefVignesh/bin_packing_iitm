@@ -11,3 +11,28 @@
 
 ### INSTRUCTIONS
 > Before proceeding to run the file make sure the following dependencies have been installed.
+> -lboost_serialization -lboost_iostreams -lboost_system
+
+1. Update the package list:
+
+    ```sh
+    sudo apt-get update
+    ```
+
+2. Install the Boost libraries:
+
+    ```sh
+    sudo apt-get install libboost-all-dev
+    ```
+
+> Once this is done just run the following inside the problem_1 directory
+
+  ```sh
+  make all
+  ```
+> The run the output executable file.
+
+ ```sh
+  ./main.out
+ ```
+
