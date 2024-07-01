@@ -53,8 +53,8 @@ def visualise(item_arrangements,truck_dim):
         plot_cuboid(ax, block[0], block[1], color=color[i], alpha=0.5)
 
     # Set labels
-    ax.set_xlabel('X')
-    ax.set_ylabel('Y')
-    ax.set_zlabel('Z')
+    ax.set_xlabel('Length')
+    ax.set_ylabel('Width')
+    ax.set_zlabel('Height')
 
     plt.show()

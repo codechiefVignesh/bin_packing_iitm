@@ -7,3 +7,4 @@ items = {"itemid":[1,2,3,4,5,6,7,8],"length":[11,5,12,10,2,10,12,10],"width":[2,
 item_arrangements = packing_3d(truck_dim,items)
 print(item_arrangements)
 visualise(item_arrangements,truck_dim)
+
