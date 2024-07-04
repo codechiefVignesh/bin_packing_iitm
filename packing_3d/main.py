@@ -63,7 +63,7 @@ def packing_3d(truck_dim,items):
     # u[i] : item i is used
     u = [model.NewBoolVar(f"u{i}") for i in range(nr)]
 
-    # x[i], y[i], z[i] : location of item i
+    # x[i], y[i], z[i] : location of item i(The starting corner of the item)
     x = [model.NewIntVar(0, L, f"x{i}") for i in range(nr)]
     y = [model.NewIntVar(0, W, f"y{i}") for i in range(nr)]
     z = [model.NewIntVar(0, H, f"z{i}") for i in range(nr)]
@@ -73,7 +73,7 @@ def packing_3d(truck_dim,items):
     ly = [model.NewIntVar(0, W, f"ly{i}") for i in range(nr)]
     lz = [model.NewIntVar(0, H, f"lz{i}") for i in range(nr)]
 
-    # x2[i], y2[i], z2[i] : upper limit of interval variable
+    # x2[i], y2[i], z2[i] : upper limit of interval variable(the opposite corner of the item)
     x2 = [model.NewIntVar(0, L, f"x2{i}") for i in range(nr)]
     y2 = [model.NewIntVar(0, W, f"y2{i}") for i in range(nr)]
     z2 = [model.NewIntVar(0, H, f"z2{i}") for i in range(nr)]
@@ -137,9 +137,7 @@ def packing_3d(truck_dim,items):
     solver = cp_model.CpSolver()
     
     solver.parameters.num_search_workers = 8
-    
     rc = solver.Solve(model)   
-    
     # report solution---------------------------------------------------------------------
     # Output solution is a dataframe with the following columns:
     # 1.The coordinate of the start corner(x,y,z)

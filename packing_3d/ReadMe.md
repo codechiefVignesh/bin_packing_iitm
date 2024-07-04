@@ -8,7 +8,7 @@ Windows OS with:
 5. numpy and pandas
 6. Google ortools
 7. matplotlib
- 
+8. Virtual Studio C++ redistributable
 
 # Steps to include the library
 

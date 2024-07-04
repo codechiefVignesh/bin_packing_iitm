@@ -31,7 +31,6 @@ with open('output.txt', 'w') as output_file:
             "weight": [item[2] for item in items_info],
             "value": [1 for item in items_info],  # Assuming value is the same as weight
         }
-        
         result = packing_3d(truck_dim, items_dict)
         output_file.write(f"Truck {truck_info[0]} results:\n")
         output_file.write(str(result) + "\n\n")
