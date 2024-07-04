@@ -21,8 +21,8 @@ def packing_3d(truck_dim,items):
     M = truck_dim["maximum_capacity"]
 
     #---------------------------------------------------
-    # derived data
-    # expand to individual items
+    # Derived data from the items
+    # Extract the length, width and height of every 
     #---------------------------------------------------
 
     l0 = df["length"].to_numpy()
