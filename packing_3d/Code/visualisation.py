@@ -17,8 +17,11 @@ def visualise(item_arrangements,truck_dim):
     blocks_corners = np.array(items_coords)
 
     # Function to plot a cuboid given the corners
-    def plot_cuboid(ax, corner1, corner2, color='blue', alpha=0.5):
-        x = [corner1[0], corner2[0]]
+    def plot_cuboid(ax, corner1, corner2, color='blue', alpha=0.5,truck=False):
+        if truck==True:
+            x = [corner1[0], corner2[0] + 2]
+        else:
+            x = [corner1[0], corner2[0]]
         y = [corner1[1], corner2[1]]
         z = [corner1[2], corner2[2]]
 
@@ -33,7 +36,8 @@ def visualise(item_arrangements,truck_dim):
         xx_left = np.full_like(yy, x[0])   # Left face
         xx_right = np.full_like(yy, x[1])  # Right face
         ax.plot_surface(xx_left, yy, zz, color=color, alpha=alpha)
-        ax.plot_surface(xx_right, yy, zz, color=color, alpha=alpha)
+        if truck==False:
+            ax.plot_surface(xx_right, yy, zz, color=color, alpha=alpha)
 
         xx, zz = np.meshgrid(x, z)
         yy_front = np.full_like(xx, y[0])  # Front face
@@ -46,11 +50,11 @@ def visualise(item_arrangements,truck_dim):
     ax = fig.add_subplot(111, projection='3d')
 
     # Plot the container box
-    plot_cuboid(ax, container_corners[0], container_corners[1], color='green', alpha=0.1)
+    plot_cuboid(ax, container_corners[0], container_corners[1], color='brown', alpha=0.5, truck=True)
 
     # Plot each block
     for i,block in enumerate(blocks_corners):
-        plot_cuboid(ax, block[0], block[1], color=color[i], alpha=0.5)
+        plot_cuboid(ax, block[0], block[1], color=color[i], alpha=0.7)
 
     # Set labels
     ax.set_xlabel('Length')
