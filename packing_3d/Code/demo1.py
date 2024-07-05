@@ -1,10 +1,193 @@
-from main import packing_3d
+from main1 import packing_3d
 from visualisation import visualise
 
-truck_dim = {"dimensions":(12,8,5),"maximum_capacity":400}
-items = {"itemid":[1,2,3,4,5,6,7,8],"length":[11,5,12,10,2,10,12,10],"width":[2,4,5,7,4,1,7,5],"height":[1,2,2,1,2,5,2,1],"weight":[48,9,6,2,33,13,29,49],"value":[1,1,1,1,1,1,1,1]}
+data = {
+            "truck": {
+                "length": 18,
+                "width": 10,
+                "height": 5,
+                "maximum_capacity": 4000
+            },
+            "items": [
+                {
+                    "itemid": 0,
+                    "length": 2,
+                    "width": 1,
+                    "height": 1,
+                    "weight": 90
+                },
+                {
+                    "itemid": 1,
+                    "length": 3,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 99
+                },
+                {
+                    "itemid": 2,
+                    "length": 4,
+                    "width": 2,
+                    "height": 1,
+                    "weight": 38
+                },
+                {
+                    "itemid": 3,
+                    "length": 7,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 108
+                },
+                {
+                    "itemid": 4,
+                    "length": 8,
+                    "width": 2,
+                    "height": 1,
+                    "weight": 123
+                },
+                {
+                    "itemid": 5,
+                    "length": 2,
+                    "width": 4,
+                    "height": 2,
+                    "weight": 54
+                },
+                {
+                    "itemid": 6,
+                    "length": 5,
+                    "width": 1,
+                    "height": 2,
+                    "weight": 159
+                },
+                {
+                    "itemid": 7,
+                    "length": 8,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 135
+                },
+                {
+                    "itemid": 8,
+                    "length": 9,
+                    "width": 4,
+                    "height": 2,
+                    "weight": 24
+                },
+                {
+                    "itemid": 9,
+                    "length": 7,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 17
+                },
+                {
+                    "itemid": 10,
+                    "length": 8,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 86
+                },
+                {
+                    "itemid": 11,
+                    "length": 4,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 59
+                },
+                {
+                    "itemid": 12,
+                    "length": 6,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 105
+                },
+                {
+                    "itemid": 13,
+                    "length": 1,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 73
+                },
+                {
+                    "itemid": 14,
+                    "length": 2,
+                    "width": 5,
+                    "height": 1,
+                    "weight": 100
+                },
+                {
+                    "itemid": 15,
+                    "length": 4,
+                    "width": 1,
+                    "height": 1,
+                    "weight": 104
+                },
+                {
+                    "itemid": 16,
+                    "length": 6,
+                    "width": 5,
+                    "height": 1,
+                    "weight": 32
+                },
+                {
+                    "itemid": 17,
+                    "length": 9,
+                    "width": 4,
+                    "height": 2,
+                    "weight": 145
+                },
+                {
+                    "itemid": 18,
+                    "length": 8,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 100
+                },
+                {
+                    "itemid": 19,
+                    "length": 5,
+                    "width": 4,
+                    "height": 2,
+                    "weight": 71
+                },
+                {
+                    "itemid": 20,
+                    "length": 3,
+                    "width": 4,
+                    "height": 2,
+                    "weight": 93
+                },
+                {
+                    "itemid": 21,
+                    "length": 7,
+                    "width": 1,
+                    "height": 1,
+                    "weight": 23
+                },
+                {
+                    "itemid": 22,
+                    "length": 4,
+                    "width": 3,
+                    "height": 2,
+                    "weight": 38
+                },
+                {
+                    "itemid": 23,
+                    "length": 7,
+                    "width": 3,
+                    "height": 2,
+                    "weight": 91
+                },
+                {
+                    "itemid": 24,
+                    "length": 2,
+                    "width": 5,
+                    "height": 2,
+                    "weight": 32
+                }
+            ]
+        }
 
-item_arrangements = packing_3d(truck_dim,items)
+item_arrangements = packing_3d(data)
 print(item_arrangements)
-visualise(item_arrangements,truck_dim)
+visualise(item_arrangements,data["truck"])
 

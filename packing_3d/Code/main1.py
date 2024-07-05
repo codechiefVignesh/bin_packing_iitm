@@ -3,22 +3,19 @@ from io import StringIO
 import pandas as pd
 import numpy as np
 
-def packing_3d(truck_dim,items): 
+def packing_3d(data): 
     #---------------------------------------------------
     # Input data format
-    # For Truck dimensions: dictionary with two keys namely "dimensions" and "maximum_capacity"
-    # Eg. truck_dim = {"dimensions":(l,b,h),"maximum_capacity":M}
-    # For Items to load: dictionary with keys "itemid","length","width","height","weight","value"
-    # Eg. items = {"itemid":[i1,i2,i3,...],"length":[l1,l2,l3,...],"width":[b1,b2,b3,...],
-    #              "height":[h1,h2,h3,...],"weight":[w1,w2,w3,...],"value":[v1,v2,v3...]}
     #---------------------------------------------------
+    truck_data = data["truck"]
+    items = data["items"]
 
     df = pd.DataFrame.from_dict(items)
     
-    L = truck_dim["dimensions"][0]
-    W = truck_dim["dimensions"][1]
-    H = truck_dim["dimensions"][2]
-    M = truck_dim["maximum_capacity"]
+    L = truck_data["length"]
+    W = truck_data["width"]
+    H = truck_data["height"]
+    M = truck_data["maximum_capacity"]
 
     #---------------------------------------------------
     # Derived data from the items
@@ -30,12 +27,11 @@ def packing_3d(truck_dim,items):
     b0 = df['width'].to_numpy()
     h0 = df['height'].to_numpy()
     w0 = df['weight'].to_numpy()
-    v0 = df['value'].to_numpy()
 
     n = len(l0)
 
     #----------------------------------------------------------------------------------------------------------------
-    # Creating duplicate item's dimensions and properties to reprsent all 6 possible rotation of the item in 3D space.
+    # Creating duplicate items dimensions and properties to reprsent all 6 possible rotation of the item in 3D space.
     # For each item we are creating its duplicates which will represents all its other rotations. 
     #----------------------------------------------------------------------------------------------------------------
 
@@ -46,7 +42,6 @@ def packing_3d(truck_dim,items):
 
     # Duplicating the weights, heights and itemid for each item.
     wr = np.tile(w0, 6)
-    vr = np.tile(v0, 6)
     itemid = np.tile(df['itemid'].to_numpy(), 6)
 
     nr = 6 * n
@@ -176,7 +171,6 @@ def packing_3d(truck_dim,items):
             'x2': [solver.Value(x2[i]) for i in used],
             'y2': [solver.Value(y2[i]) for i in used],
             'z2': [solver.Value(z2[i]) for i in used],
-            'value': [vr[i] for i in used],
             'weight': [wr[i] for i in used],
             'itemid': [itemid[i] for i in used]
         })
