@@ -1,7 +1,9 @@
 from main1 import packing_3d
-from visualisation import visualise
+from visualisation1 import visualise
+import os
+import json
 
-data = {
+data_input = {
             "truck": {
                 "length": 18,
                 "width": 10,
@@ -187,7 +189,30 @@ data = {
             ]
         }
 
-item_arrangements = packing_3d(data)
-print(item_arrangements)
-visualise(item_arrangements,data["truck"])
+item_arrangements = packing_3d(data_input)
+
+current_dir = os.getcwd()
+parent_dir = os.path.dirname(current_dir)
+output_file = parent_dir + "/Output/output1.json"
+
+if os.path.exists(output_file):
+    with open(output_file, 'r') as json_file:
+        data = json.load(json_file)
+else:
+    data = {"Outputs":[]}
+
+new_item_arrangements = json.loads(item_arrangements)
+
+print(new_item_arrangements)
+
+new_output = {
+    "item_arrangements":new_item_arrangements
+    }
+data["Outputs"].append(new_output)
+
+with open(output_file, 'w') as json_file:
+    json.dump(data, json_file, indent=5)
+
+print(type(item_arrangements))
+visualise(item_arrangements,data_input["truck"])
 

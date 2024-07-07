@@ -1,16 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from colors import color
+import json
 # from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
-def visualise(item_arrangements,truck_dim):
+def visualise(items,truck_dim):
     # Define the corners of the container box (opposite corners)
     container_corners = np.array([[0, 0, 0], [truck_dim["length"], truck_dim["width"], truck_dim["height"]]])
     
+    item_arrangements = json.loads(items)
+
     # Collecting the end points of each item
     items_coords = []
     for i in range(len(item_arrangements)):
-        item = [[item_arrangements["x"][i],item_arrangements["y"][i],item_arrangements["z"][i]],[item_arrangements["x2"][i],item_arrangements["y2"][i],item_arrangements["z2"][i]]]
+        item = [[item_arrangements[i]["x"],item_arrangements[i]["y"],item_arrangements[i]["z"]],[item_arrangements[i]["x2"],item_arrangements[i]["y2"],item_arrangements[i]["z2"]]]
         items_coords.append(item)
 
     # Define the corners of the blocks (each row is a pair of opposite corners)
@@ -52,13 +55,17 @@ def visualise(item_arrangements,truck_dim):
     # Plot the container box
     plot_cuboid(ax, container_corners[0], container_corners[1], color='brown', alpha=0.5, truck=True)
 
-    # Plot each block
-    for i,block in enumerate(blocks_corners):
-        plot_cuboid(ax, block[0], block[1], color=color[i], alpha=0.7)
-
     # Set labels
     ax.set_xlabel('Length')
     ax.set_ylabel('Width')
     ax.set_zlabel('Height')
 
+    # Plot each block
+    for i,block in enumerate(blocks_corners):
+        plot_cuboid(ax, block[0], block[1], color=color[i], alpha=0.7)
+        plt.pause(2)
+
     plt.show()
+        
+
+    

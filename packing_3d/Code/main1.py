@@ -2,6 +2,7 @@ from ortools.sat.python import cp_model
 from io import StringIO
 import pandas as pd
 import numpy as np
+import json
 
 def packing_3d(data): 
     #---------------------------------------------------
@@ -174,6 +175,7 @@ def packing_3d(data):
             'weight': [wr[i] for i in used],
             'itemid': [itemid[i] for i in used]
         })
-        return df
+        output = df.to_json(orient='records')
+        return output
     else:
         return "Error finding the solution"
