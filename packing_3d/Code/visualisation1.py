@@ -63,6 +63,11 @@ def visualise(items,truck_dim):
     # Plot each block
     for i,block in enumerate(blocks_corners):
         plot_cuboid(ax, block[0], block[1], color=color[i], alpha=0.7)
+        x_text = (block[0][0] + block[1][0]) / 2
+        y_text = (block[0][1] + block[1][1]) / 2
+        z_text = (block[0][2] + block[1][2]) / 2
+        itemid = item_arrangements[i]["itemid"]
+        ax.text(x_text, y_text, z_text, f'Item ID: {itemid}', color='black', fontsize=15, ha='center', va='center')
         plt.pause(2)
 
     plt.show()
