@@ -1,0 +1,18 @@
+{
+    "truck":{
+        "length":12,
+        "width":8,
+        "height":5,
+        "maximum_capacity":400
+    },
+
+    "items":[
+        {
+            "itemid":1,
+            "length":11,
+            "width":2,
+            "height":1,
+            "weight":95
+        }
+    ]
+}
