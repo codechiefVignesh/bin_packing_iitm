@@ -16,8 +16,6 @@ def visualise(items,truck_dim):
         item = [[item_arrangements[i]["x"],item_arrangements[i]["y"],item_arrangements[i]["z"]],[item_arrangements[i]["x2"],item_arrangements[i]["y2"],item_arrangements[i]["z2"]]]
         items_coords.append(item)
 
-    items_coords.sort()
-
     # Define the corners of the blocks (each row is a pair of opposite corners)
     blocks_corners = np.array(items_coords)
 
@@ -69,8 +67,7 @@ def visualise(items,truck_dim):
         y_text = (block[0][1] + block[1][1]) / 2
         z_text = (block[0][2] + block[1][2]) / 2
         itemid = item_arrangements[i]["itemid"]
-        location = item_arrangements[i]["location"]
-        ax.text(x_text, y_text, z_text, f'Item ID: {itemid} location:{location}', color='black', fontsize=15, ha='center', va='center')
+        ax.text(x_text, y_text, z_text, f'Item ID: {itemid}', color='black', fontsize=15, ha='center', va='center')
         plt.pause(2)
 
     plt.show()
