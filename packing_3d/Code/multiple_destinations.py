@@ -1,7 +1,8 @@
 from ortools.sat.python import cp_model
-from io import StringIO
 import pandas as pd
 import numpy as np
+import os
+import json
 
 def packing_3d(data): 
     #---------------------------------------------------
@@ -111,12 +112,12 @@ def packing_3d(data):
     for i in range(nr):
         for j in range(i+1,nr):
             # Existing constraints
-            c1 = model.NewBoolVar(f"c1_{i}_{j}")
-            c2 = model.NewBoolVar(f"c2_{i}_{j}")
-            c3 = model.NewBoolVar(f"c3_{i}_{j}")
-            c4 = model.NewBoolVar(f"c4_{i}_{j}")
-            c5 = model.NewBoolVar(f"c5_{i}_{j}")
-            c6 = model.NewBoolVar(f"c6_{i}_{j}")
+            c1 = model.NewBoolVar("c1")
+            c2 = model.NewBoolVar("c2")
+            c3 = model.NewBoolVar("c3")
+            c4 = model.NewBoolVar("c4")
+            c5 = model.NewBoolVar("c5")
+            c6 = model.NewBoolVar("c6")
 
             model.Add(x2[i] <= x[j]).OnlyEnforceIf(c1)
             model.Add(x2[j] <= x[i]).OnlyEnforceIf(c2)
@@ -128,19 +129,19 @@ def packing_3d(data):
             model.AddBoolOr([c1, c2, c3, c4, c5, c6])
 
     for i in range(nr):
-        for j in range(i+1,nr):
-            # New constraints based on location value
-            after_or_above = model.NewBoolVar(f"after_or_above_{i}_{j}")
-            model.Add(loc[i] < loc[j]).OnlyEnforceIf(after_or_above)
+        for j in range(i + 1, nr):
+            if loc[i] < loc[j]:
+                # Item i is placed after item j in the x-direction
+                model.Add(x2[j] <= x[i])
+                # Item i is placed above item j in the z-direction
+                model.Add(z2[j] <= z[i])
+            
+            elif loc[i] > loc[j]:
+                # Item i is placed before item j in the x-direction
+                model.Add(x2[i] <= x[j])
+                # Item i is placed below item j in the z-direction
+                model.Add(z2[i] <= z[j])
 
-            # Constraints to enforce that i is placed after or above j if loc[i] < loc[j]
-            c7 = model.NewBoolVar(f"c7_{i}_{j}")
-            c8 = model.NewBoolVar(f"c8_{i}_{j}")
-            
-            model.Add(x[i] >= x2[j]).OnlyEnforceIf(c7)
-            model.Add(z[i] >= z2[j]).OnlyEnforceIf(c8)
-            
-            model.AddBoolOr([c7, c8]).OnlyEnforceIf(after_or_above)
 
     # extra: this constraint helps performance enormously(space constraints)
     # The constraint ensures that the total volume of the selected items does not exceed the volume of the container. 
@@ -158,11 +159,26 @@ def packing_3d(data):
     # creates an instance of the CpSolver class. This solver will be used to find a solution to the constraint 
     # programming model defined in model.
     solver = cp_model.CpSolver()
+
+    # current_dir = os.getcwd()
+    # parent_dir = os.path.dirname(current_dir)
+    # output_file = parent_dir + "/Output/model.json"
+
+    # if os.path.exists(output_file):
+    #     with open(output_file, 'r') as json_file:
+    #         data = json.load(json_file)
+    # else:
+    #     data = {"Outputs":[]}
+
+    # data['Outputs'].append(str(model))
+
+    # with open(output_file, 'w') as json_file:
+    #     json.dump(data, json_file, indent=5)
     
     # sets the number of parallel workers (or threads) that the solver will use. By setting it to 8, we are 
     # instructing the solver to use 8 parallel workers. This can help speed up the solving process by exploring 
     # multiple parts of the search space concurrently.
-    solver.parameters.num_search_workers = 8
+    solver.parameters.num_search_workers = 4
     
     #The output 
     # The solver attempts to find values for the decision variables that satisfy all the constraints defined in the model.
