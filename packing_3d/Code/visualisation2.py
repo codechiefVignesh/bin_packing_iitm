@@ -70,7 +70,8 @@ def visualise(items,truck_dim):
         y_text = (block[0][1] + block[1][1]) / 2
         z_text = (block[0][2] + block[1][2]) / 2
         itemid = item_arrangements[i]["itemid"]
-        ax.text(x_text, y_text, z_text, f'Item ID: {itemid}', color='black', fontsize=15, ha='center', va='center')
+        location = item_arrangements[i]['location']
+        ax.text(x_text, y_text, z_text, f'Item ID: {itemid} loc:{location}', color='black', fontsize=15, ha='center', va='center')
         plt.pause(2)
 
     plt.show()

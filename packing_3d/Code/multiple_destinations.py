@@ -178,7 +178,7 @@ def packing_3d(data):
     # sets the number of parallel workers (or threads) that the solver will use. By setting it to 8, we are 
     # instructing the solver to use 8 parallel workers. This can help speed up the solving process by exploring 
     # multiple parts of the search space concurrently.
-    solver.parameters.num_search_workers = 4
+    solver.parameters.num_search_workers = 8
     
     #The output 
     # The solver attempts to find values for the decision variables that satisfy all the constraints defined in the model.
@@ -209,6 +209,7 @@ def packing_3d(data):
             'location':[loc[i] for i in used]
         })
         output = df.to_json(orient='records')
+        print(df)
         return output
     else:
         return "Error finding the solution"
