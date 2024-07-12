@@ -179,6 +179,7 @@ def packing_3d(data):
     # instructing the solver to use 8 parallel workers. This can help speed up the solving process by exploring 
     # multiple parts of the search space concurrently.
     solver.parameters.num_search_workers = 8
+
     
     #The output 
     # The solver attempts to find values for the decision variables that satisfy all the constraints defined in the model.
