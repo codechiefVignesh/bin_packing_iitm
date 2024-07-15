@@ -5,7 +5,7 @@
 | Section       | Description                         |
 |---------------|-------------------------------------|
 | [Introduction](#introduction) | Bin Packing Codes          |
-| [Basic packing](#file-1)       | Packing without constraints             |
+| [Basic packing](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document1.md)       | Packing without constraints             |
 | [Fragility](#file-2)       | Added Fragility Constraint            |
 | [Visualisation](#file-3)       | Visualising the packing            |
 | [File 4](#file-4)       | Details about File 4             |
