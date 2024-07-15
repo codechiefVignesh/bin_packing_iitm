@@ -12,7 +12,7 @@
 | [File 5](#file-5)       | Details about File 5             |
 
 ## Introduction
-This project is about...
+This documentation containts an exhaustive overview of the project and setting up the codes for packing with visualisation. This documentation shall provide a comprehensive explanation to all codes and shall help in to proceed with future work as well.
 
 ## File 1
 Details about File 1...
