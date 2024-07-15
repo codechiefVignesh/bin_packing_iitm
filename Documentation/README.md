@@ -14,8 +14,10 @@
 ## Introduction
 This documentation containts an exhaustive overview of the project and setting up the codes for packing with visualisation. This documentation shall provide a comprehensive explanation to all codes and shall help in to proceed with future work as well.
 
-## File 1
+## Basic Packing
 Details about File 1...
+
+This file contains the technology stack used an overview of the basic setup of packing without any constraints.
 
 ## File 2
 Details about File 2...
