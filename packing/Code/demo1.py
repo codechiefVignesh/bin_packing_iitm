@@ -1,4 +1,4 @@
-from fragility import packing_3d
+from packing.Code.packing_3d_fragility import packing_3d
 from visualisation1 import visualise
 import os
 import json
