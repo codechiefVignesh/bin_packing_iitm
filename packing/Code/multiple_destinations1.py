@@ -130,17 +130,22 @@ def packing_3d(data):
 
     for i in range(nr):
         for j in range(i + 1, nr):
+            c7 = model.NewBoolVar("c7")
+            c8 = model.NewBoolVar("c8")
             if loc[i] < loc[j]:
                 # Item i is placed after item j in the x-direction
-                model.Add(x2[j] <= x[i])
+                model.Add(x2[j] <= x[i]).OnlyEnforceIf(c7)
                 # Item i is placed above item j in the z-direction
-                model.Add(z2[j] <= z[i])
+                model.Add(z2[j] <= z[i]).OnlyEnforceIf(c8)
             
             elif loc[i] > loc[j]:
                 # Item i is placed before item j in the x-direction
-                model.Add(x2[i] <= x[j])
+                model.Add(x2[i] <= x[j]).OnlyEnforceIf(c7)
                 # Item i is placed below item j in the z-direction
-                model.Add(z2[i] <= z[j])
+                model.Add(z2[i] <= z[j]).OnlyEnforceIf(c8)
+
+            if loc[i]!=loc[j]:
+                model.AddBoolOr([c7, c8])
 
 
     # extra: this constraint helps performance enormously(space constraints)
