@@ -4,192 +4,227 @@ import os
 import json
 
 data_input ={
-                "truck": {
-                "length": 18,
-                "width": 10,
-                "height": 5,
-                "maximum_capacity": 4000
+            "truck": {
+                "length": 20,
+                "width": 12,
+                "height": 6,
+                "maximum_capacity": 5000
             },
             "items": [
                 {
                     "itemid": 0,
-                    "length": 2,
+                    "length": 9,
                     "width": 1,
-                    "height": 1,
-                    "weight": 90
+                    "height": 2,
+                    "weight": 129
                 },
                 {
                     "itemid": 1,
-                    "length": 3,
-                    "width": 2,
+                    "length": 9,
+                    "width": 4,
                     "height": 2,
-                    "weight": 99
+                    "weight": 163
                 },
                 {
                     "itemid": 2,
                     "length": 4,
                     "width": 2,
-                    "height": 1,
-                    "weight": 38
+                    "height": 2,
+                    "weight": 66
                 },
                 {
                     "itemid": 3,
                     "length": 7,
-                    "width": 2,
+                    "width": 6,
                     "height": 2,
-                    "weight": 108
+                    "weight": 98
                 },
                 {
                     "itemid": 4,
                     "length": 8,
-                    "width": 2,
-                    "height": 1,
-                    "weight": 123
+                    "width": 1,
+                    "height": 3,
+                    "weight": 61
                 },
                 {
                     "itemid": 5,
-                    "length": 2,
-                    "width": 4,
+                    "length": 10,
+                    "width": 5,
                     "height": 2,
-                    "weight": 54
+                    "weight": 56
                 },
                 {
                     "itemid": 6,
                     "length": 5,
-                    "width": 1,
+                    "width": 6,
                     "height": 2,
-                    "weight": 159
+                    "weight": 109
                 },
                 {
                     "itemid": 7,
-                    "length": 8,
-                    "width": 2,
-                    "height": 2,
-                    "weight": 135
+                    "length": 6,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 119
                 },
                 {
                     "itemid": 8,
                     "length": 9,
-                    "width": 4,
-                    "height": 2,
-                    "weight": 24
+                    "width": 3,
+                    "height": 3,
+                    "weight": 80
                 },
                 {
                     "itemid": 9,
-                    "length": 7,
-                    "width": 2,
-                    "height": 2,
-                    "weight": 17
+                    "length": 6,
+                    "width": 5,
+                    "height": 3,
+                    "weight": 133
                 },
                 {
                     "itemid": 10,
-                    "length": 8,
-                    "width": 4,
+                    "length": 7,
+                    "width": 2,
                     "height": 1,
-                    "weight": 86
+                    "weight": 130
                 },
                 {
                     "itemid": 11,
-                    "length": 4,
-                    "width": 4,
+                    "length": 9,
+                    "width": 3,
                     "height": 1,
-                    "weight": 59
+                    "weight": 158
                 },
                 {
                     "itemid": 12,
-                    "length": 6,
-                    "width": 4,
+                    "length": 7,
+                    "width": 1,
                     "height": 1,
-                    "weight": 105
+                    "weight": 91
                 },
                 {
                     "itemid": 13,
-                    "length": 1,
-                    "width": 2,
-                    "height": 2,
-                    "weight": 73
+                    "length": 10,
+                    "width": 1,
+                    "height": 1,
+                    "weight": 103
                 },
                 {
                     "itemid": 14,
-                    "length": 2,
-                    "width": 5,
-                    "height": 1,
-                    "weight": 100
-                },
-                {
-                    "itemid": 15,
                     "length": 4,
-                    "width": 1,
-                    "height": 1,
-                    "weight": 104
-                },
-                {
-                    "itemid": 16,
-                    "length": 6,
                     "width": 5,
-                    "height": 1,
-                    "weight": 32
-                },
-                {
-                    "itemid": 17,
-                    "length": 9,
-                    "width": 4,
-                    "height": 2,
-                    "weight": 145
-                },
-                {
-                    "itemid": 18,
-                    "length": 8,
-                    "width": 2,
-                    "height": 2,
-                    "weight": 100
-                },
-                {
-                    "itemid": 19,
-                    "length": 5,
-                    "width": 4,
-                    "height": 2,
-                    "weight": 71
-                },
-                {
-                    "itemid": 20,
-                    "length": 3,
-                    "width": 4,
                     "height": 2,
                     "weight": 93
                 },
                 {
-                    "itemid": 21,
+                    "itemid": 15,
+                    "length": 5,
+                    "width": 5,
+                    "height": 2,
+                    "weight": 121
+                },
+                {
+                    "itemid": 16,
+                    "length": 9,
+                    "width": 3,
+                    "height": 2,
+                    "weight": 160
+                },
+                {
+                    "itemid": 17,
                     "length": 7,
                     "width": 1,
+                    "height": 3,
+                    "weight": 138
+                },
+                {
+                    "itemid": 18,
+                    "length": 6,
+                    "width": 1,
                     "height": 1,
-                    "weight": 23
+                    "weight": 125
+                },
+                {
+                    "itemid": 19,
+                    "length": 9,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 87
+                },
+                {
+                    "itemid": 20,
+                    "length": 4,
+                    "width": 2,
+                    "height": 3,
+                    "weight": 105
+                },
+                {
+                    "itemid": 21,
+                    "length": 8,
+                    "width": 6,
+                    "height": 3,
+                    "weight": 1
                 },
                 {
                     "itemid": 22,
-                    "length": 4,
-                    "width": 3,
-                    "height": 2,
-                    "weight": 38
+                    "length": 10,
+                    "width": 5,
+                    "height": 1,
+                    "weight": 84
                 },
                 {
                     "itemid": 23,
-                    "length": 7,
-                    "width": 3,
-                    "height": 2,
-                    "weight": 91
+                    "length": 4,
+                    "width": 5,
+                    "height": 3,
+                    "weight": 16
                 },
                 {
                     "itemid": 24,
-                    "length": 2,
+                    "length": 4,
                     "width": 5,
+                    "height": 3,
+                    "weight": 150
+                },
+                {
+                    "itemid": 25,
+                    "length": 5,
+                    "width": 3,
+                    "height": 3,
+                    "weight": 91
+                },
+                {
+                    "itemid": 26,
+                    "length": 7,
+                    "width": 6,
                     "height": 2,
-                    "weight": 32
+                    "weight": 77
+                },
+                {
+                    "itemid": 27,
+                    "length": 10,
+                    "width": 2,
+                    "height": 3,
+                    "weight": 69
+                },
+                {
+                    "itemid": 28,
+                    "length": 1,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 99
+                },
+                {
+                    "itemid": 29,
+                    "length": 6,
+                    "width": 4,
+                    "height": 2,
+                    "weight": 49
                 }
             ]
         }
 
-item_arrangements = packing_3d(data_input)
+
 current_dir = os.getcwd()
 parent_dir = os.path.dirname(current_dir)
 output_file = parent_dir + "/Output/output2.json"
@@ -199,6 +234,8 @@ if os.path.exists(output_file):
         data = json.load(json_file)
 else:
     data = {"Outputs":[]}
+
+item_arrangements = packing_3d(data_input)
 
 new_item_arrangements = json.loads(item_arrangements)
 
