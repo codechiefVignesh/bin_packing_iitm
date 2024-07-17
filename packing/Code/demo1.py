@@ -1,4 +1,4 @@
-from packing.Code.packing_3d_fragility import packing_3d
+from fragility_packing import packing_3d_fragility
 from visualisation1 import visualise
 import os
 import json
@@ -39,7 +39,7 @@ data_input = {
     ]
 }
 
-item_arrangements = packing_3d(data_input)
+item_arrangements = packing_3d_fragility(data_input)
 # print(item_arrangements)
 current_dir = os.getcwd()
 parent_dir = os.path.dirname(current_dir)

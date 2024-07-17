@@ -1,4 +1,4 @@
-from packing_3d_dup import packing_3d
+from packing.Code.packing_3d_tight import packing_3d
 from visualisation1 import visualise
 import os
 import json

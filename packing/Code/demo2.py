@@ -1,4 +1,4 @@
-from multiple_destinations1 import packing_3d
+from multiple_destinations import packing_3d_multiple_destinations
 from visualisation2 import visualise
 import os
 import json
@@ -134,7 +134,7 @@ data_input = {
             ]
         }
 
-item_arrangements = packing_3d(data_input)
+item_arrangements = packing_3d_multiple_destinations(data_input)
 # print(item_arrangements)
 current_dir = os.getcwd()
 parent_dir = os.path.dirname(current_dir)

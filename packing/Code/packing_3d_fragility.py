@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import json
 
-def packing_3d(data):
+def packing_3d_fragility(data):
     try:
         #---------------------------------------------------
         # Input data format
