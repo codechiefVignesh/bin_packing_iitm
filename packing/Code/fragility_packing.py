@@ -129,7 +129,7 @@ def packing_3d_fragility(data):
 
                 model.AddBoolOr([c1,c2,c3,c4,c5,c6])
 
-        
+        #fragility constaint
         for i in range(nr):
             weight_above = model.NewIntVar(0, M, f"weight_above{i}")
             total_weight_above = []
@@ -181,7 +181,7 @@ def packing_3d_fragility(data):
         # 1.The coordinate of the start corner(x,y,z)
         # 2.Dimensions of the items(length,width,height)
         # 3.The coordinate of the end corner(x2,y2,z2)
-        # 4.The value,weight and itemid of the item.
+        # 4.The weight and itemid of the item.
         #-------------------------------------------------------------------------------------
         
         if rc == cp_model.OPTIMAL or rc == cp_model.FEASIBLE:

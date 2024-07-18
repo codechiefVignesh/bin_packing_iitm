@@ -1,3 +1,5 @@
+#generates input data for the 3d packing
+
 import random
 import os
 

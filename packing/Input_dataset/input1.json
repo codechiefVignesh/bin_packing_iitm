@@ -554,6 +554,306 @@
                     "weight": 49
                 }
             ]
+        },
+        {
+            "truck": {
+                "length": 15,
+                "width": 8,
+                "height": 4,
+                "maximum_capacity": 2000
+            },
+            "items": [
+                {
+                    "itemid": 0,
+                    "length": 1,
+                    "width": 3,
+                    "height": 2,
+                    "weight": 128
+                },
+                {
+                    "itemid": 1,
+                    "length": 1,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 39
+                },
+                {
+                    "itemid": 2,
+                    "length": 7,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 90
+                },
+                {
+                    "itemid": 3,
+                    "length": 5,
+                    "width": 2,
+                    "height": 1,
+                    "weight": 29
+                },
+                {
+                    "itemid": 4,
+                    "length": 5,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 110
+                },
+                {
+                    "itemid": 5,
+                    "length": 4,
+                    "width": 4,
+                    "height": 2,
+                    "weight": 82
+                },
+                {
+                    "itemid": 6,
+                    "length": 5,
+                    "width": 1,
+                    "height": 1,
+                    "weight": 84
+                },
+                {
+                    "itemid": 7,
+                    "length": 6,
+                    "width": 1,
+                    "height": 1,
+                    "weight": 124
+                },
+                {
+                    "itemid": 8,
+                    "length": 5,
+                    "width": 1,
+                    "height": 1,
+                    "weight": 27
+                },
+                {
+                    "itemid": 9,
+                    "length": 6,
+                    "width": 1,
+                    "height": 1,
+                    "weight": 28
+                },
+                {
+                    "itemid": 10,
+                    "length": 5,
+                    "width": 2,
+                    "height": 1,
+                    "weight": 20
+                },
+                {
+                    "itemid": 11,
+                    "length": 6,
+                    "width": 3,
+                    "height": 2,
+                    "weight": 3
+                },
+                {
+                    "itemid": 12,
+                    "length": 4,
+                    "width": 3,
+                    "height": 1,
+                    "weight": 87
+                },
+                {
+                    "itemid": 13,
+                    "length": 5,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 62
+                },
+                {
+                    "itemid": 14,
+                    "length": 3,
+                    "width": 1,
+                    "height": 2,
+                    "weight": 124
+                }
+            ]
+        },
+        {
+            "truck": {
+                "length": 16,
+                "width": 10,
+                "height": 6,
+                "maximum_capacity": 3000
+            },
+            "items": [
+                {
+                    "itemid": 0,
+                    "length": 2,
+                    "width": 5,
+                    "height": 2,
+                    "weight": 108
+                },
+                {
+                    "itemid": 1,
+                    "length": 2,
+                    "width": 3,
+                    "height": 2,
+                    "weight": 75
+                },
+                {
+                    "itemid": 2,
+                    "length": 4,
+                    "width": 1,
+                    "height": 1,
+                    "weight": 92
+                },
+                {
+                    "itemid": 3,
+                    "length": 3,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 78
+                },
+                {
+                    "itemid": 4,
+                    "length": 7,
+                    "width": 4,
+                    "height": 3,
+                    "weight": 89
+                },
+                {
+                    "itemid": 5,
+                    "length": 7,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 113
+                },
+                {
+                    "itemid": 6,
+                    "length": 7,
+                    "width": 3,
+                    "height": 1,
+                    "weight": 44
+                },
+                {
+                    "itemid": 7,
+                    "length": 1,
+                    "width": 5,
+                    "height": 1,
+                    "weight": 45
+                },
+                {
+                    "itemid": 8,
+                    "length": 2,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 49
+                },
+                {
+                    "itemid": 9,
+                    "length": 7,
+                    "width": 5,
+                    "height": 2,
+                    "weight": 92
+                },
+                {
+                    "itemid": 10,
+                    "length": 3,
+                    "width": 3,
+                    "height": 2,
+                    "weight": 72
+                },
+                {
+                    "itemid": 11,
+                    "length": 3,
+                    "width": 4,
+                    "height": 3,
+                    "weight": 30
+                },
+                {
+                    "itemid": 12,
+                    "length": 5,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 119
+                },
+                {
+                    "itemid": 13,
+                    "length": 2,
+                    "width": 5,
+                    "height": 1,
+                    "weight": 26
+                },
+                {
+                    "itemid": 14,
+                    "length": 8,
+                    "width": 3,
+                    "height": 1,
+                    "weight": 37
+                },
+                {
+                    "itemid": 15,
+                    "length": 3,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 2
+                },
+                {
+                    "itemid": 16,
+                    "length": 3,
+                    "width": 1,
+                    "height": 3,
+                    "weight": 31
+                },
+                {
+                    "itemid": 17,
+                    "length": 1,
+                    "width": 2,
+                    "height": 3,
+                    "weight": 58
+                },
+                {
+                    "itemid": 18,
+                    "length": 2,
+                    "width": 3,
+                    "height": 1,
+                    "weight": 27
+                },
+                {
+                    "itemid": 19,
+                    "length": 8,
+                    "width": 2,
+                    "height": 3,
+                    "weight": 67
+                },
+                {
+                    "itemid": 20,
+                    "length": 3,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 1
+                },
+                {
+                    "itemid": 21,
+                    "length": 2,
+                    "width": 5,
+                    "height": 1,
+                    "weight": 7
+                },
+                {
+                    "itemid": 22,
+                    "length": 4,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 60
+                },
+                {
+                    "itemid": 23,
+                    "length": 4,
+                    "width": 1,
+                    "height": 1,
+                    "weight": 39
+                },
+                {
+                    "itemid": 24,
+                    "length": 6,
+                    "width": 5,
+                    "height": 1,
+                    "weight": 85
+                }
+            ]
         }
     ]
 }

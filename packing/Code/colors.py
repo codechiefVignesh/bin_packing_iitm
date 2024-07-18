@@ -1,3 +1,5 @@
+#This file contains a set of css colors in the form of a python list which will be used for visualiation of the results.
+
 color = [
     'b', 'g', 'r', 'c', 'm', 'y', 'k', 'w', 'aliceblue', 'antiquewhite', 'aqua', 'aquamarine', 
     'azure', 'beige', 'bisque', 'black', 'blanchedalmond', 'blue', 'blueviolet', 'brown', 

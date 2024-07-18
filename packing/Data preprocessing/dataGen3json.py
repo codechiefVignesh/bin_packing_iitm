@@ -1,4 +1,4 @@
-#Generates input data for 3d packing in form of json
+#Generates input data for 3d packing with delivery location in form of json
 
 import random
 import json
@@ -16,28 +16,29 @@ def generate_truck_data(length, width, height, maximum_capacity):
     return truck
 
 # Function to generate item data
-def generate_item_data(itemid, length, width, height, maximum_capacity, no_items):
+def generate_item_data(itemid, length, width, height, maximum_capacity, no_items, no_locations):
     item = {
         "itemid":itemid,
         "length":random.randint(1,length//2),
         "width":random.randint(1,width//2),
         "height":random.randint(1,height//2),
-        "weight":random.randint(1,maximum_capacity // no_items)
+        "weight":random.randint(1,maximum_capacity // no_items),
+        "location":random.randint(1,no_locations)
     }
 
     return item
 
 # Function to generate test cases
-def generate_test_cases(truck_dimensions, truck_weight_capacity, num_items):
+def generate_test_cases(truck_dimensions, truck_weight_capacity, num_items, no_locations):
     # Generate truck data
-    truck_data = generate_truck_data(*truck_dimensions,truck_weight_capacity)
+    truck_data = generate_truck_data( *truck_dimensions, truck_weight_capacity)
     # Generate items data
-    items_data = [generate_item_data(i,*truck_dimensions,truck_weight_capacity,num_items) for i in range(num_items)]
+    items_data = [generate_item_data(i, *truck_dimensions, truck_weight_capacity, num_items, no_locations) for i in range(num_items)]
 
     # Determine the path to the input file
     current_dir = os.getcwd()
     parent_dir = os.path.dirname(current_dir)
-    file_name = parent_dir + "/Input_dataset/input1.json"
+    file_name = parent_dir + "/Input_dataset/input3.json"
 
     # Load existing data if the file exists, otherwise initialize a new data dictionary
     if os.path.exists(file_name):
@@ -60,15 +61,17 @@ def generate_test_cases(truck_dimensions, truck_weight_capacity, num_items):
 
 # Main function to generate specific test cases
 def main():
-    truck_spec_1 = ((15, 8, 4), 2000)
-    num_items_1 = 15
+    truck_spec_1 = ((12, 6, 4), 400)
+    num_items_1 = 10
+    num_locations_1 = 5
 
-    generate_test_cases(*truck_spec_1,num_items_1)
+    generate_test_cases( *truck_spec_1, num_items_1, num_locations_1)
 
-    truck_spec_2 = ((16, 10, 6), 3000)
-    num_items_2 = 25
+    truck_spec_2 = ((15, 10, 6), 900)
+    num_items_2 = 15
+    num_locations_2 = 5
 
-    generate_test_cases(*truck_spec_2,num_items_2)
+    generate_test_cases( *truck_spec_2, num_items_2, num_locations_2)
 
 # Entry point of the script
 if __name__ == "__main__":

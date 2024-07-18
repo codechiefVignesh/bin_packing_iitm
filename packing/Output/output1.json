@@ -1,0 +1,203 @@
+{
+     "Outputs": [
+          {
+               "item_arrangements": [
+                    {
+                         "x": 9,
+                         "y": 6,
+                         "z": 0,
+                         "length": 9,
+                         "width": 4,
+                         "height": 2,
+                         "x2": 18,
+                         "y2": 10,
+                         "z2": 2,
+                         "weight": 163,
+                         "itemid": 1
+                    },
+                    {
+                         "x": 11,
+                         "y": 0,
+                         "z": 0,
+                         "length": 7,
+                         "width": 6,
+                         "height": 2,
+                         "x2": 18,
+                         "y2": 6,
+                         "z2": 2,
+                         "weight": 98,
+                         "itemid": 3
+                    },
+                    {
+                         "x": 3,
+                         "y": 0,
+                         "z": 1,
+                         "length": 8,
+                         "width": 1,
+                         "height": 3,
+                         "x2": 11,
+                         "y2": 1,
+                         "z2": 4,
+                         "weight": 61,
+                         "itemid": 4
+                    },
+                    {
+                         "x": 8,
+                         "y": 5,
+                         "z": 2,
+                         "length": 10,
+                         "width": 5,
+                         "height": 2,
+                         "x2": 18,
+                         "y2": 10,
+                         "z2": 4,
+                         "weight": 56,
+                         "itemid": 5
+                    },
+                    {
+                         "x": 11,
+                         "y": 0,
+                         "z": 2,
+                         "length": 6,
+                         "width": 5,
+                         "height": 2,
+                         "x2": 17,
+                         "y2": 5,
+                         "z2": 4,
+                         "weight": 109,
+                         "itemid": 6
+                    },
+                    {
+                         "x": 5,
+                         "y": 3,
+                         "z": 0,
+                         "length": 4,
+                         "width": 6,
+                         "height": 1,
+                         "x2": 9,
+                         "y2": 9,
+                         "z2": 1,
+                         "weight": 119,
+                         "itemid": 7
+                    },
+                    {
+                         "x": 0,
+                         "y": 0,
+                         "z": 1,
+                         "length": 3,
+                         "width": 9,
+                         "height": 3,
+                         "x2": 3,
+                         "y2": 9,
+                         "z2": 4,
+                         "weight": 80,
+                         "itemid": 8
+                    },
+                    {
+                         "x": 3,
+                         "y": 3,
+                         "z": 1,
+                         "length": 5,
+                         "width": 6,
+                         "height": 3,
+                         "x2": 8,
+                         "y2": 9,
+                         "z2": 4,
+                         "weight": 133,
+                         "itemid": 9
+                    },
+                    {
+                         "x": 0,
+                         "y": 1,
+                         "z": 0,
+                         "length": 3,
+                         "width": 9,
+                         "height": 1,
+                         "x2": 3,
+                         "y2": 10,
+                         "z2": 1,
+                         "weight": 158,
+                         "itemid": 11
+                    },
+                    {
+                         "x": 3,
+                         "y": 1,
+                         "z": 0,
+                         "length": 2,
+                         "width": 9,
+                         "height": 1,
+                         "x2": 5,
+                         "y2": 10,
+                         "z2": 1,
+                         "weight": 129,
+                         "itemid": 0
+                    },
+                    {
+                         "x": 0,
+                         "y": 9,
+                         "z": 1,
+                         "length": 7,
+                         "width": 1,
+                         "height": 1,
+                         "x2": 7,
+                         "y2": 10,
+                         "z2": 2,
+                         "weight": 91,
+                         "itemid": 12
+                    },
+                    {
+                         "x": 0,
+                         "y": 0,
+                         "z": 0,
+                         "length": 10,
+                         "width": 1,
+                         "height": 1,
+                         "x2": 10,
+                         "y2": 1,
+                         "z2": 1,
+                         "weight": 103,
+                         "itemid": 13
+                    },
+                    {
+                         "x": 9,
+                         "y": 3,
+                         "z": 0,
+                         "length": 2,
+                         "width": 2,
+                         "height": 4,
+                         "x2": 11,
+                         "y2": 5,
+                         "z2": 4,
+                         "weight": 66,
+                         "itemid": 2
+                    },
+                    {
+                         "x": 0,
+                         "y": 9,
+                         "z": 2,
+                         "length": 7,
+                         "width": 1,
+                         "height": 2,
+                         "x2": 7,
+                         "y2": 10,
+                         "z2": 4,
+                         "weight": 130,
+                         "itemid": 10
+                    },
+                    {
+                         "x": 5,
+                         "y": 1,
+                         "z": 0,
+                         "length": 5,
+                         "width": 2,
+                         "height": 4,
+                         "x2": 10,
+                         "y2": 3,
+                         "z2": 4,
+                         "weight": 93,
+                         "itemid": 14
+                    }
+               ]
+          }
+     ]
+}

@@ -8,8 +8,10 @@ app = Flask(__name__)
 def home():
     return "Hello"
 
+# Route for 3D packing without fragility considerations
 @app.route("/packing3d",methods=['POST'])
 def packing3d():
+    # Extract truck data from the request form
     truck = {
         "length":int(request.form["truck_length"]),
         "width":int(request.form["truck_width"]),
@@ -25,6 +27,7 @@ def packing3d():
 
     items = []
 
+    # Loop to extract all items data from the request form
     try:
 
         while(request.form[current_item + "_id"]):
@@ -50,12 +53,15 @@ def packing3d():
         "items":items
     }
 
+    # Call the packing function and return the output
     output_data = packing_3d(input_data)
 
     return output_data
 
+# Route for 3D packing with fragility considerations
 @app.route("/packing3d_fragility",methods=['POST'])
-def packing3d():
+def packing3d_fragility():
+    # Extract truck data from the request form
     truck = {
         "length":int(request.form["truck_length"]),
         "width":int(request.form["truck_width"]),
@@ -71,6 +77,7 @@ def packing3d():
 
     items = []
 
+    # Loop to extract all items data from the request form
     try:
 
         while(request.form[current_item + "_id"]):
@@ -97,6 +104,7 @@ def packing3d():
         "items":items
     }
 
+    # Call the fragility packing function and return the output
     output_data = packing_3d_fragility(input_data)
 
     return output_data

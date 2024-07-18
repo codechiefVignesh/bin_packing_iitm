@@ -2,7 +2,6 @@ from ortools.sat.python import cp_model
 from io import StringIO
 import pandas as pd
 import numpy as np
-import json
 
 def packing_3d(data): 
     #---------------------------------------------------
@@ -157,7 +156,7 @@ def packing_3d(data):
     # 1.The coordinate of the start corner(x,y,z)
     # 2.Dimensions of the items(length,width,height)
     # 3.The coordinate of the end corner(x2,y2,z2)
-    # 4.The value,weight and itemid of the item.
+    # 4.The weight and itemid of the item.
     #-------------------------------------------------------------------------------------
     
     if rc == cp_model.OPTIMAL or rc == cp_model.FEASIBLE:

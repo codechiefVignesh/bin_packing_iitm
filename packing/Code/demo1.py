@@ -1,5 +1,11 @@
+#This is a demo code demonstrates the working of the 3d packing with fragility constraints and visualisation of the same.
+
+#Import normal fragility function 
+# from packing_3d_fragility import packing_3d_fragility
+
+#Import tight fragility function for better results. 
 from fragility_packing import packing_3d_fragility
-from visualisation1 import visualise
+from visualise_3d_packing_json import visualise
 import os
 import json
 
@@ -39,29 +45,38 @@ data_input = {
     ]
 }
 
+# Call the packing function to get the item arrangements
 item_arrangements = packing_3d_fragility(data_input)
-# print(item_arrangements)
-current_dir = os.getcwd()
-parent_dir = os.path.dirname(current_dir)
-output_file = parent_dir + "/Output/output1.json"
 
+# Get the current working directory
+current_dir = os.getcwd()
+# Get the parent directory
+parent_dir = os.path.dirname(current_dir)
+# Define the output file path
+output_file = parent_dir + "/Output/output2.json"
+
+# Check if the output file exists
 if os.path.exists(output_file):
+    # If the file exists, read the existing data
     with open(output_file, 'r') as json_file:
         data = json.load(json_file)
 else:
+    # If the file does not exist, create an empty dictionary with "Outputs" as a key
     data = {"Outputs":[]}
 
+# Load the new item arrangements from the packing function
 new_item_arrangements = json.loads(item_arrangements)
 
-# print(new_item_arrangements)
-
+# Create a new output dictionary with the item arrangements
 new_output = {
-    "item_arrangements":new_item_arrangements
-    }
+    "item_arrangements": new_item_arrangements
+}
+# Append the new output to the existing data
 data["Outputs"].append(new_output)
 
+# Write the updated data back to the output file
 with open(output_file, 'w') as json_file:
     json.dump(data, json_file, indent=5)
 
-# print(type(item_arrangements))
-visualise(item_arrangements,data_input["truck"])
+# Visualize the item arrangements in the truck
+visualise(item_arrangements, data_input["truck"])
