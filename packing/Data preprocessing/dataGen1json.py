@@ -60,13 +60,13 @@ def generate_test_cases(truck_dimensions, truck_weight_capacity, num_items):
 
 # Main function to generate specific test cases
 def main():
-    truck_spec_1 = ((15, 8, 4), 2000)
-    num_items_1 = 15
+    truck_spec_1 = ((20, 15, 8), 4000)
+    num_items_1 = 40
 
     generate_test_cases(*truck_spec_1,num_items_1)
 
-    truck_spec_2 = ((16, 10, 6), 3000)
-    num_items_2 = 25
+    truck_spec_2 = ((18, 12, 8), 3500)
+    num_items_2 = 35
 
     generate_test_cases(*truck_spec_2,num_items_2)
 

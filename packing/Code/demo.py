@@ -8,120 +8,193 @@ from packing_3d_tight import packing_3d
 from visualise_3d_packing_json import visualise
 import os
 import json
+import time
+
+start = time.time()
 
 #This is an example of sample input data which we have generated using the dataGen1.py file 
 data_input ={
             "truck": {
-                "length": 20,
-                "width": 12,
+                "length": 16,
+                "width": 10,
                 "height": 6,
-                "maximum_capacity": 5000
+                "maximum_capacity": 3000
             },
             "items": [
                 {
                     "itemid": 0,
-                    "length": 9,
-                    "width": 1,
+                    "length": 2,
+                    "width": 5,
                     "height": 2,
-                    "weight": 129
+                    "weight": 108
                 },
                 {
                     "itemid": 1,
-                    "length": 9,
-                    "width": 4,
+                    "length": 2,
+                    "width": 3,
                     "height": 2,
-                    "weight": 163
+                    "weight": 75
                 },
                 {
                     "itemid": 2,
                     "length": 4,
-                    "width": 2,
-                    "height": 2,
-                    "weight": 66
+                    "width": 1,
+                    "height": 1,
+                    "weight": 92
                 },
                 {
                     "itemid": 3,
-                    "length": 7,
-                    "width": 6,
+                    "length": 3,
+                    "width": 2,
                     "height": 2,
-                    "weight": 98
+                    "weight": 78
                 },
                 {
                     "itemid": 4,
-                    "length": 8,
-                    "width": 1,
+                    "length": 7,
+                    "width": 4,
                     "height": 3,
-                    "weight": 61
+                    "weight": 89
                 },
                 {
                     "itemid": 5,
-                    "length": 10,
-                    "width": 5,
-                    "height": 2,
-                    "weight": 56
+                    "length": 7,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 113
                 },
                 {
                     "itemid": 6,
-                    "length": 5,
-                    "width": 6,
-                    "height": 2,
-                    "weight": 109
+                    "length": 7,
+                    "width": 3,
+                    "height": 1,
+                    "weight": 44
                 },
                 {
                     "itemid": 7,
-                    "length": 6,
-                    "width": 4,
+                    "length": 1,
+                    "width": 5,
                     "height": 1,
-                    "weight": 119
+                    "weight": 45
                 },
                 {
                     "itemid": 8,
-                    "length": 9,
-                    "width": 3,
-                    "height": 3,
-                    "weight": 80
+                    "length": 2,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 49
                 },
                 {
                     "itemid": 9,
-                    "length": 6,
+                    "length": 7,
                     "width": 5,
-                    "height": 3,
-                    "weight": 133
+                    "height": 2,
+                    "weight": 92
                 },
                 {
                     "itemid": 10,
-                    "length": 7,
-                    "width": 2,
-                    "height": 1,
-                    "weight": 130
+                    "length": 3,
+                    "width": 3,
+                    "height": 2,
+                    "weight": 72
                 },
                 {
                     "itemid": 11,
-                    "length": 9,
-                    "width": 3,
-                    "height": 1,
-                    "weight": 158
+                    "length": 3,
+                    "width": 4,
+                    "height": 3,
+                    "weight": 30
                 },
                 {
                     "itemid": 12,
-                    "length": 7,
-                    "width": 1,
-                    "height": 1,
-                    "weight": 91
+                    "length": 5,
+                    "width": 2,
+                    "height": 2,
+                    "weight": 119
                 },
                 {
                     "itemid": 13,
-                    "length": 10,
-                    "width": 1,
+                    "length": 2,
+                    "width": 5,
                     "height": 1,
-                    "weight": 103
+                    "weight": 26
                 },
                 {
                     "itemid": 14,
-                    "length": 4,
+                    "length": 8,
+                    "width": 3,
+                    "height": 1,
+                    "weight": 37
+                },
+                {
+                    "itemid": 15,
+                    "length": 3,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 2
+                },
+                {
+                    "itemid": 16,
+                    "length": 3,
+                    "width": 1,
+                    "height": 3,
+                    "weight": 31
+                },
+                {
+                    "itemid": 17,
+                    "length": 1,
+                    "width": 2,
+                    "height": 3,
+                    "weight": 58
+                },
+                {
+                    "itemid": 18,
+                    "length": 2,
+                    "width": 3,
+                    "height": 1,
+                    "weight": 27
+                },
+                {
+                    "itemid": 19,
+                    "length": 8,
+                    "width": 2,
+                    "height": 3,
+                    "weight": 67
+                },
+                {
+                    "itemid": 20,
+                    "length": 3,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 1
+                },
+                {
+                    "itemid": 21,
+                    "length": 2,
                     "width": 5,
-                    "height": 2,
-                    "weight": 93
+                    "height": 1,
+                    "weight": 7
+                },
+                {
+                    "itemid": 22,
+                    "length": 4,
+                    "width": 4,
+                    "height": 1,
+                    "weight": 60
+                },
+                {
+                    "itemid": 23,
+                    "length": 4,
+                    "width": 1,
+                    "height": 1,
+                    "weight": 39
+                },
+                {
+                    "itemid": 24,
+                    "length": 6,
+                    "width": 5,
+                    "height": 1,
+                    "weight": 85
                 }
             ]
         }
@@ -154,6 +227,10 @@ with open(output_file, 'w') as json_file:
     json.dump(data, json_file, indent=5)
 
 # print(type(item_arrangements))
+
+end = time.time()
+
+print(f"Time taken: {end-start}seconds")
 
 #calling visualise function which displays the output of 3d packing
 visualise(item_arrangements,data_input["truck"])

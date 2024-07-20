@@ -62,14 +62,15 @@ def generate_test_cases(truck_dimensions, truck_weight_capacity, num_items):
 
 # Main function to generate specific test cases
 def main():
-    truck_spec_1 = ((12, 6, 4), 400)
-    num_items_1 = 10
-    generate_test_cases( *truck_spec_1, num_items_1)
+    truck_spec_1 = ((20, 15, 8), 4000)
+    num_items_1 = 40
 
-    truck_spec_2 = ((15, 10, 6), 900)
-    num_items_2 = 15
+    generate_test_cases(*truck_spec_1,num_items_1)
 
-    generate_test_cases( *truck_spec_2, num_items_2)
+    truck_spec_2 = ((18, 12, 8), 3500)
+    num_items_2 = 35
+
+    generate_test_cases(*truck_spec_2,num_items_2)
 
 # Entry point of the script
 if __name__ == "__main__":
