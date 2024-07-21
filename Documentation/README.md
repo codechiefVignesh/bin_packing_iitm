@@ -10,25 +10,26 @@
 | [Visualisation](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document3.md)       | Visualising the packing            |
 | [Demo codes](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document4.md)       |  Demo codes for execution of codes             |
 | [Flask Server](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document5.md)       | Flask Server for backend API             |
-| [Input generation](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document6.md)       | Flask Server for backend API             |
+| [Input generation](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document6.md)       | Input generation codes             |
 
 ## Introduction
-This documentation contains an exhaustive overview of the project and setting up the codes for 3d packing with visualisation. This documentation shall provide a comprehensive explanation to all codes and shall help in to proceed with future work as well. The whole project is prsent inside the packing directory.
+This documentation contains an exhaustive overview of the project and setting up the codes for 3d packing with visualisation. This documentation shall provide a comprehensive explanation to all codes and shall help in to proceed with future work as well. The whole project is present inside the directory named packing.
 
 ## Basic Packing
-Basic packing deals with the packing of items inside a container.Here if we are given dimensions of container and lists of the items and their dimensions. Then the code will give coordinates of the items as an output depicting as how and where to place the items inside the conatiner for better space utilisation. Here we have consider constraints like weight constraint which is the conatiner has a maximum holding capacity and no overlaping constraint which prevents two items to get overlaped coordinates.To view the code please click the link present in the table of contents.[Basic packing](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document1.md) 
+Basic packing involves placing items inside a container efficiently. Given the dimensions of the container and the dimensions of the items, the code will provide the coordinates for each item, showing how and where to place them inside the container for optimal space utilization. We need to consider constraints such as the weight constraint, ensuring the total weight does not exceed the container's maximum capacity, and the no overlapping constraint, which prevents any two items from overlapping. To view the code explanation, please click the link provided in the table of contents. [Basic packing](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document1.md) 
 
-This file contains the technology stack used an overview of the basic setup of packing without any constraints.
+## Fragility
+In addition to normal packing. In this code we have implemented an addition constraint to the packing of items i.e. fragility of the items. It helps in the prevention of damage to delicate items by not placing heavier object above them. Here we have defined fragility as the maximum weight an item can withstand. To view the code explanation, please click the link provided in the table of contents. [Fragility](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document2.md)  
 
-## File 2
-Details about File 2...
+## Visualisation
+This section of the code deals with the visualisation of the output. We tried to depict the output in form of image for clear understanding of the output for the end users. To view the code explanation, please click the link provided in the table of contents. [Visualisation](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document3.md)
 
-## File 3
-Details about File 3...
+## Demo codes
+These are provide for the usage of the above codes. In each of the demo code we have mentioned how to import the necesaary libraries and run the code on a sample input. Also how to get the visualisation of the output. To view the code explanation, please click the link provided in the table of contents. [Demo codes](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document4.md)
 
-## File 4
-Details about File 4...
+## Flask Server
+We have created a flask server for the request through apis. By running the flask server we will be able to get the output in the json form wothout the overhead of running the code in our local machine. As of now the flask server will run in the local server. But in future we can have a dedicated derver for handling such requests.  To view the code explanation, please click the link provided in the table of contents. [Flask Server](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document5.md)        
 
-## File 5
-Details about File 5...
+## Input generation
+The folder called Data preprocessing contains all the input generation files. We have codes for generating inputs for both normal packing and fragility constraints. To view the code explanation, please click the link provided in the table of contents. [Input generation](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document6.md)
 
