@@ -190,6 +190,6 @@ else:
 ### Note:
 In addition to basic packing of the items we have included a file called packing_3d_tight. The main difference between the two is that one is only run once but the tight one is runned multiple times by reducing the dimensions of the container. The packing_3d_tight gives somewhat better result than the packing_3d code.
 
-
+Next go to [Fragility](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document2.md).
 
 
