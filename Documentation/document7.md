@@ -33,9 +33,9 @@ For more details see this video [How to install Virtual Studio C++ redistributab
 
 #### Step 3: Installing Microsoft Visual Studio Community 2022
 
-i. Go to [Visual Studio download](https://visualstudio.microsoft.com/vs/) 
-ii. Click on the Download Visual Studio.
-iii. Select the required version of visual studio.
+i. Go to [Visual Studio download](https://visualstudio.microsoft.com/vs/) \
+ii. Click on the Download Visual Studio. \
+iii. Select the required version of visual studio. \
 iv. Download and install the package.
 
 For more details see this video [How to install Microsoft Visual Studio](https://www.youtube.com/watch?v=SViilF85ues)
