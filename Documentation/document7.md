@@ -75,7 +75,7 @@ ii. Type ``` python -m pip install matplotlib ```
 For more details visit [Matplotlib Installation](https://matplotlib.org/stable/install/index.html)
 
 
-After installing the necessary packages. Please go to Basic packing to know about the code or you can go to demo codes for how to import the packages and use them.
+After installing the necessary packages. Please go to [Basic packing](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document1.md) to know about the code or you can go to [Demo codes](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document4.md) for how to import the packages and use them.
 
 
 
