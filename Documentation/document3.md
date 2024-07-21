@@ -106,4 +106,6 @@ plt.show()
 * plt.show(): Displays the final 3D plot.
 
 ### Note:
-We have included three separate files for different input format and for more showing additional features of the items in the plot. visualise_3d_packing takes dtaframe as the input while visualise_3d_packing_json takes json input. Though all the code work in the same way.
+We have included three separate files for different input format and for more showing additional features of the items in the plot. visualise_3d_packing takes dataframe as the input while visualise_3d_packing_json takes json input. Though all the code work in the same way.
+
+Next go to [Demo codes](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document4.md).
