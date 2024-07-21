@@ -87,8 +87,10 @@ if __name__ == "__main__":
 * Runs the main function if the script is executed directly.
 
 ### Note:
-We have created three input files for generating input data for three varaints of the code we developed.There is only little bit difference in the three code in the part of the items.
+We have created three input files for generating input data for three variants of the code we developed.There is only little bit difference in the three code in the part of the items generation function.
 * dataGen1json.py is for packing_3d and packing_3d_tight.
 * dataGen2json.py is for packing_3d_fragility and fragility packing.
 * dataGen3json.py is for multiple_destinaions whose code is still in devlopment but input generation is over.
 * dataGen1.py and PS(input test case generation) are the initial codes we developed for the txt input data format.
+
+This is the end of the documentation.Back to [Table fo contents](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/README.md).
