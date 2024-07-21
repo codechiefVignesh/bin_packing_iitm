@@ -1,10 +1,10 @@
 #This is a demo code demonstrates the working of the 3d packing and visuailistion of the same.
 
 #The below line imports normal packing function
-# from packing_3d import packing_3d
+from packing_3d import packing_3d
 
 #The below line import tight packing function which will give better results
-from packing_3d_tight import packing_3d
+# from packing_3d_tight import packing_3d
 from visualise_3d_packing_json import visualise
 import os
 import json
