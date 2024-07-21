@@ -28,4 +28,6 @@ for i in range(nr):
 * Ensures that the total weight of items above a fragile item does not exceed its fragility limit.
 
 ### Note:
-In addition to basic packing of the items we have included a file called fragility_packing. The main difference between the two is that one is only run once but the tight one is runned multiple times by reducing the dimensions of the container. The fragility_packing gives somewhat better result than the packing_3d_fragility code.
+In addition to basic packing of the items we have included a file called fragility_packing. The main difference between the two is that one is only run once but the fragility_packing one is runned multiple times by reducing the dimensions of the container. The fragility_packing gives somewhat better result than the packing_3d_fragility code.
+
+Next go to [Visualisation](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document3.md).
