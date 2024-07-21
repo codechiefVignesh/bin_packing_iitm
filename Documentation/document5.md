@@ -137,3 +137,5 @@ We have tested our code using [postman](https://www.postman.com/downloads/).
   ![Postman Request](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/images/postman-request.png "Postman-Request")
 * Sample response:
   ![Postman Response](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/images/postman-response.png "Postman-Response")
+
+  Next go to [Input generation](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document6.md).
