@@ -135,3 +135,5 @@ Note:
 We have tested our code using [postman](https://www.postman.com/downloads/).
 * Sample form data input:
   ![Postman Request](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/images/postman-request.png "Postman-Request")
+* Sample response:
+  ![Postman Response](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/images/postman-response.png "Postman-Response")
