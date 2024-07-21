@@ -103,7 +103,9 @@ visualise(item_arrangements, data_input["truck"])
 * Calls the visualise function to display the 3D packing arrangement.
 
 ### Note:
-Here for the executing the demo we have created three different files for each type of the input.
-* demo.py is for packing_3d and packing_3d_tight
-* demo2.py is for packing_3d_fragility and fragility_packing
-* demo3.py is for multiple_destination which is still pending. 
+Here for executing the codes we have created three different demo files for each type of the input.
+* demo.py is for packing_3d and packing_3d_tight.
+* demo2.py is for packing_3d_fragility and fragility_packing.
+* demo3.py is for multiple_destination whose code is still in progress.
+
+Next go to [Flask Server](https://github.com/codechiefVignesh/bin_packing_iitm/blob/main/Documentation/document5.md). 
